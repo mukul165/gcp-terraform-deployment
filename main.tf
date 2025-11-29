@@ -14,3 +14,14 @@ module "Compute-Engine" {
   instance_tags  = ["web", "dev"]
   
 }
+module "gke_private_cluster" {
+  source           = "./Modules/gke-cluster"
+  cluster_name     = "my-private-cluster"
+  location         = "us-central1"
+  node_count       = 3
+  node_machine_type = "e2-medium"
+  network          = "default"
+  subnetwork       = "default"
+  master_ipv4_cidr_block = "10.0.0.0/28"
+}
+
