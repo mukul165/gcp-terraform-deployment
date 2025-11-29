@@ -1,0 +1,12 @@
+# Terraform dirs and state
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+
+# Local binaries
+*.exe
+
+# Service account keys and secrets
+*.json
+!terraform.*.json   # (optional: keep any tf-related json if you ever use them)
