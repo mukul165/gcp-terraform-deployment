@@ -24,5 +24,7 @@ module "gke_private_cluster" {
   subnetwork       = module.VPC.subnetwork_self_link
   master_ipv4_cidr_block = "10.0.0.0/28"
   deletion_protection = false
+  cluster_secondary_range_name = "pods"
+  services_secondary_range_name = "services"
 }
 
