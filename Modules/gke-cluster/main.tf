@@ -13,6 +13,7 @@ resource "google_container_cluster" "this" {
     enable_private_nodes    = true
     enable_private_endpoint = false  # Keep master endpoint public if you want access
     master_ipv4_cidr_block  = var.master_ipv4_cidr_block
+    
   }
 
 #   ip_allocation_policy {
@@ -27,6 +28,7 @@ resource "google_container_cluster" "this" {
   # Enable Kubernetes API server logging
   logging_service    = "logging.googleapis.com/kubernetes"
   monitoring_service = "monitoring.googleapis.com/kubernetes"
+  deletion_protection = var.deletion_protection
 }
 
 resource "google_container_node_pool" "primary_nodes" {

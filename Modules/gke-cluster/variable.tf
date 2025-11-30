@@ -53,3 +53,9 @@ variable "master_ipv4_cidr_block" {
   default     = "10.0.0.0/28"
   description = "CIDR block for private master endpoint"
 }
+variable "deletion_protection" {
+  type        = bool
+  default     = false
+  description = "Enable deletion protection for the node pool"
+  
+}
