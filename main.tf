@@ -16,7 +16,7 @@ module "Compute-Engine" {
 }
 module "gke_private_cluster" {
   source           = "./Modules/gke-cluster"
-  cluster_name     = "my-private-cluster"
+  cluster_name     = "my-private-cluster1"
   location         = "us-central1"
   node_count       = 3
   node_machine_type = "e2-medium"
