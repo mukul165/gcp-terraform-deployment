@@ -31,15 +31,13 @@ variable "node_machine_type" {
 }
 
 variable "network" {
+  description = "Network self-link"
   type        = string
-  default     = "default"
-  description = "VPC network name"
 }
 
 variable "subnetwork" {
+  description = "Subnetwork self-link"
   type        = string
-  default     = "default"
-  description = "Subnetwork name"
 }
 
 variable "master_authorized_networks" {
