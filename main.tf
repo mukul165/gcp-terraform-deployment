@@ -23,5 +23,6 @@ module "gke_private_cluster" {
   network          = "default"
   subnetwork       = "default"
   master_ipv4_cidr_block = "10.0.0.0/28"
+  deletion_protection = false
 }
 
