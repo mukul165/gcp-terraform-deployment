@@ -20,8 +20,8 @@ module "gke_private_cluster" {
   location         = "us-central1"
   node_count       = 3
   node_machine_type = "e2-medium"
-  network          = var.network
-  subnetwork       = var.subnetwork
+  network          = "default"
+  subnetwork       = "default"
   master_ipv4_cidr_block = "10.0.0.0/28"
 }
 
