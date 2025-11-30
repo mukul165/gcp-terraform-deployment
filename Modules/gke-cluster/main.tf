@@ -10,15 +10,17 @@ resource "google_container_cluster" "this" {
 
   # Enable private cluster
   private_cluster_config {
-    enable_private_nodes    = true
+    enable_private_nodes    = false
     enable_private_endpoint = false  # Keep master endpoint public if you want access
     master_ipv4_cidr_block  = var.master_ipv4_cidr_block
     
   }
+  ip_allocation_policy {
+  #use_ip_aliases                = true
+  cluster_secondary_range_name  = var.cluster_secondary_range_name
+  services_secondary_range_name = var.services_secondary_range_name
+}
 
-#   ip_allocation_policy {
-#     use_ip_aliases = true
-#   }
 
 #   # Optional authorized networks for master
 #   master_authorized_networks_config {

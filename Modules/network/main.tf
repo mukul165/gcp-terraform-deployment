@@ -8,6 +8,15 @@ resource "google_compute_subnetwork" "VPC_Subnetwork" {
   ip_cidr_range = "10.0.0.0/16"
   region        = "us-central1"
   network = google_compute_network.VPC_Network.self_link
+
+  secondary_ip_range {
+    range_name = "pods"
+    ip_cidr_range = "10.1.0.0/16"
+  }
+  secondary_ip_range {
+    range_name = "services"
+    ip_cidr_range = "10.2.0.0/20"
+}
 }
 resource "google_compute_firewall" "allow-http" {
   name    = "${var.network_name}-allow-http"
@@ -37,3 +46,4 @@ resource "google_compute_firewall" "allow-ssh" {
   # Must match tags on the VM
   target_tags = ["web", "dev"]
 }
+

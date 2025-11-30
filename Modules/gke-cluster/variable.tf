@@ -57,3 +57,12 @@ variable "deletion_protection" {
   description = "Enable deletion protection for the node pool"
   
 }
+variable "cluster_secondary_range_name" {
+  type        = string
+  description = "Secondary range name for cluster pods"
+}
+
+variable "services_secondary_range_name" {
+  type        = string
+  description = "Secondary range name for services"
+}

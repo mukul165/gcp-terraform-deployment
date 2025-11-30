@@ -20,8 +20,8 @@ module "gke_private_cluster" {
   location         = "us-central1"
   node_count       = 3
   node_machine_type = "e2-medium"
-  network          = "default"
-  subnetwork       = "default"
+  network          = module.VPC.network_self_link
+  subnetwork       = module.VPC.subnetwork_self_link
   master_ipv4_cidr_block = "10.0.0.0/28"
   deletion_protection = false
 }
